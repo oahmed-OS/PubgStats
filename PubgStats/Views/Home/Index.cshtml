@@ -1,8 +1,25 @@
-﻿@{
+﻿@model PubgStats.Models.PlayerStatsModel
+
+@{
     ViewData["Title"] = "PubgStats";
 }
 
 
 <div class="row">
-I like potatoes
+    <div class="playerFormContainer">
+        <div class="playerForm">
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "searchPlayer", @class = "inheritSize" }))
+            {
+
+                <div class="form-horizontal inheritSize">
+                    <input type="text" name="Player" value="" class="inheritSize playerInput" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="statsGridContainer">
+
+    </div>
 </div>

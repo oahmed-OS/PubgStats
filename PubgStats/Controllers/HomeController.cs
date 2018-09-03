@@ -12,26 +12,16 @@ namespace PubgStats.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            PlayerStatsModel player = new PlayerStatsModel();
+            return View(player);
         }
 
-        public IActionResult About()
+        [HttpPost]
+        public IActionResult Index([Bind(include: "PlayerName")] PlayerStatsModel player)
         {
-            ViewData["Message"] = "Your application description page.";
+            //call stats api and return model
 
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(player);
         }
     }
 }
