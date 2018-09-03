@@ -1,6 +1,18 @@
-﻿body {
+﻿html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    /*Background Image*/
+    background-image: url('../images/background-lg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Wrapping element */
@@ -8,6 +20,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    flex: 1;
 }
 
 /* Carousel */
@@ -26,10 +39,17 @@
     margin: 15px;
 }
 
-/* Hide/rearrange for smaller screens */
+/* Tablet screens */
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    body {
+        background-image: url('../images/background-md.svg');
+    }
+}
+
+/* Mobile screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
-    .carousel-caption {
-        display: none;
+    body {
+        background-image: url('../images/background-sm.svg');
     }
 }
