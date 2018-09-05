@@ -26,15 +26,15 @@
     ko.applyBindings(StatsModel);
 
 
-    function getPlayer(playerName, region) {
-        var base = "http://pubgservicelayer.azurewebsites.net/api/pubg/playerstats/";
-        $.getJSON(base + playerName + "/season/division.bro.official.2018-09/region/" + region, function (data) {
+    //function getPlayer(playerName, region) {
+    //    var base = "http://pubgservicelayer.azurewebsites.net/api/pubg/playerstats/";
+    //    $.getJSON(base + playerName + "/season/division.bro.official.2018-09/region/" + region, function (data) {
 
-            StatsModel = ko.mapping.fromJS(data);
-        });
-    };
+    //        StatsModel = ko.mapping.fromJS(data);
+    //    });
+    //};
 
 
-    console.log(StatsModel.playerName);
+    //console.log(StatsModel.playerName);
     
 } ());
