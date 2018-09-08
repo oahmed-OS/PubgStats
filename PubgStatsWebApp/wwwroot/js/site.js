@@ -45,7 +45,7 @@
                 return new ModeModel(options.data);
             }
         },
-        'SquadTPP': {
+        'squadTPP': {
             create: function (options) {
                 return new ModeModel(options.data);
             }
@@ -65,7 +65,7 @@
         });
     };
 
-    //getPlayer("cronaldo97", "10");
+    getPlayer("cronaldo97", "10");
     ko.applyBindings(ViewModel);
     
 } ());
