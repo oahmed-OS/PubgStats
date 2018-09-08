@@ -65,7 +65,7 @@
         });
     };
 
-    getPlayer("cronaldo97", "10");
+    //getPlayer("cronaldo97", "10");
     ko.applyBindings(ViewModel);
     
 } ());

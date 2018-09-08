@@ -20,12 +20,12 @@
     </div>
 </div>
 
-<div class="row" >
-
+<!-- ko if: Player().soloFPP-->
+<div class="row">
     <div class="statsGridContainer">
         <div class="row statsRow" data-bind="with: Player">
             <!--SOLO FPP-->
-            <div class="statsCard col-md-4" >
+            <div class="statsCard col-md-4">
                 <!-- ko if: $data.soloFPP-->
                 <div class="statsField" data-bind="text: $data.soloFPP.KillDeath"></div>
                 <div class="statsField" data-bind="text: $data.soloFPP.AverageDamage"></div>
@@ -77,3 +77,4 @@
         </div>
     </div>
 </div>
+<!-- /ko -->
