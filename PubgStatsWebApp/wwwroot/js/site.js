@@ -4,8 +4,8 @@
     function ModeModel(data) {
         var self = this;
         this.KillDeath = ko.observable((typeof data === 'undefined') ? 0 : data.killDeath);
-        this.AverageDamage = ko.observable((typeof data === 'undefined') ? 0 : data.killDeath);
-        this.WinRatio = ko.observable((typeof data === 'undefined') ? 0 : data.killDeath);
+        this.AverageDamage = ko.observable((typeof data === 'undefined') ? 0 : data.averageDamage);
+        this.WinRatio = ko.observable((typeof data === 'undefined') ? 0 : data.winRatio);
     };
 
     function StatsModel() {
@@ -65,7 +65,15 @@
         });
     };
 
-    getPlayer("cronaldo97", "10");
+
+
+    $('#searchPlayer').submit(function (event) {
+        var name = $('#playerInput').val();
+        getPlayer(name, '10');
+        event.preventDefault();
+    });
+
+    //getPlayer("cronaldo97", "10");
     ko.applyBindings(ViewModel);
     
 } ());

@@ -5,14 +5,14 @@
 }
 
 
-<div class="row">
+<div class="row formRow">
     <div class="playerFormContainer">
         <div class="playerForm">
             @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "searchPlayer", @class = "inheritSize" }))
             {
 
                 <div class="form-horizontal inheritSize">
-                    <input type="text" placeholder="Search player" onfocus="this.placeholder=''" onblur="this.placeholder='Search Player...'"
+                    <input id="playerInput" type="text" placeholder="Search player" onfocus="this.placeholder=''" onblur="this.placeholder='Search Player...'"
                            autocomplete="off" class="inheritSize playerInput" />
                 </div>
             }

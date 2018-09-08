@@ -33,9 +33,13 @@ body {
     width: 100%;
 }
 
+.formRow {
+    height: 50%;
+}
+
 .playerFormContainer {
-    top: 30%;
-    position: absolute;
+    top: 50%;
+    position: relative;
     width: 350px;
     height: 100px;
     display: flex;
@@ -78,7 +82,6 @@ body {
 }
 
 .statsGrid {
-    position: absolute;
     top: 50%;
     width: 90%;
 }
