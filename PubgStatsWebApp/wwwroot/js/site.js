@@ -1,40 +1,71 @@
 ﻿// Write your Javascript code.
 (function () {
 
-    //var ModeModel = {
-    //    KillDeath : ko.observable(""),
-    //    AverageDamage : ko.observable(""),
-    //    WinRation : ko.observable("")
-    //};
-
-    function ModeModel() {
-        this.KillDeath= ko.observable(""),
-        this.AverageDamage= ko.observable(""),
-        this.WinRation= ko.observable("")
+    function ModeModel(data) {
+        var self = this;
+        this.KillDeath = ko.observable((typeof data === 'undefined') ? 0 : data.killDeath);
+        this.AverageDamage = ko.observable((typeof data === 'undefined') ? 0 : data.killDeath);
+        this.WinRatio = ko.observable((typeof data === 'undefined') ? 0 : data.killDeath);
     };
 
-    var StatsModel = {
-        playerName: ko.observable(""),
-        SoloFPP: new ModeModel(),
-        DuoFPP: new ModeModel(),
-        SquadFPP: new ModeModel(),
-        SoloTPP: new ModeModel(),
-        DuoTPP: new ModeModel(),
-        SquadTPP: new ModeModel()
+    function StatsModel() {
+        var self = this;
+        self.playerName = ko.observable('meow');
+        self.SoloFPP = ko.observable();
+        self.DuoFPP = ko.observable();
+        self.SquadFPP = ko.observable();
+        self.SoloTPP = ko.observable();
+        self.DuoTPP = ko.observable();
+        self.SquadTPP = ko.observable();
     };
 
-    ko.applyBindings(StatsModel);
+    var modeMapping = {
+        'soloFPP': {
+            create: function (options) {
+                return new ModeModel(options.data);
+            }
+        },
+        'duoFPP': {
+            create: function (options) {
+                return new ModeModel(options.data);
+            }
+        },
+        'squadFPP': {
+            create: function (options) {
+                return new ModeModel(options.data);
+            }
+        },
+        'soloTPP': {
+            create: function (options) {
+                return new ModeModel(options.data);
+            }
+        },
+        'duoTPP': {
+            create: function (options) {
+                return new ModeModel(options.data);
+            }
+        },
+        'SquadTPP': {
+            create: function (options) {
+                return new ModeModel(options.data);
+            }
+        }
+    };
 
+    var ViewModel = {
+        Player: ko.observable(new StatsModel())
+    }
 
-    //function getPlayer(playerName, region) {
-    //    var base = "http://pubgservicelayer.azurewebsites.net/api/pubg/playerstats/";
-    //    $.getJSON(base + playerName + "/season/division.bro.official.2018-09/region/" + region, function (data) {
+    function getPlayer(playerName, region) {
+        var base = "http://pubgservicelayer.azurewebsites.net/api/pubg/playerstats/";
+        $.getJSON(base + playerName + "/season/division.bro.official.2018-09/region/" + region, function (data) {
+            var playerStats = new StatsModel();
+            playerStats = ko.mapping.fromJS(data, modeMapping);
+            ViewModel.Player(playerStats);
+        });
+    };
 
-    //        StatsModel = ko.mapping.fromJS(data);
-    //    });
-    //};
-
-
-    //console.log(StatsModel.playerName);
+    getPlayer("cronaldo97", "10");
+    ko.applyBindings(ViewModel);
     
 } ());

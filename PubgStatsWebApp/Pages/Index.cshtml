@@ -19,76 +19,60 @@
         </div>
     </div>
 </div>
-<div class="row">
+
+<div class="row" >
+
     <div class="statsGridContainer">
-        <div class="row statsRow">
-            <div class="statsCard col-md-4">
-                <div class="statsField">
-                    1.2 KD
-                </div>
-                <div class="statsField">
-                    200ADR
-                </div>
-                <div class="statsField">
-                    20% WR
-                </div>
+        <div class="row statsRow" data-bind="with: Player">
+            <!--SOLO FPP-->
+            <div class="statsCard col-md-4" >
+                <!-- ko if: $data.soloFPP-->
+                <div class="statsField" data-bind="text: $data.soloFPP.KillDeath"></div>
+                <div class="statsField" data-bind="text: $data.soloFPP.AverageDamage"></div>
+                <div class="statsField" data-bind="text: $data.soloFPP.WinRatio"></div>
+                <!-- /ko -->
             </div>
+            <!--DUO FPP-->
             <div class="statsCard col-md-4">
-                <div class="statsField">
-                    1.2 KD
-                </div>
-                <div class="statsField">
-                    200ADR
-                </div>
-                <div class="statsField">
-                    20% WR
-                </div>
+                <!-- ko if: $data.duoFPP-->
+                <div class="statsField" data-bind="text: $data.duoFPP.KillDeath"></div>
+                <div class="statsField" data-bind="text: $data.duoFPP.AverageDamage"></div>
+                <div class="statsField" data-bind="text: $data.duoFPP.WinRatio"></div>
+                <!-- /ko -->
             </div>
+            <!--SQUAD FPP-->
             <div class="statsCard col-md-4">
-                <div class="statsField">
-                    1.2 KD
-                </div>
-                <div class="statsField">
-                    200ADR
-                </div>
-                <div class="statsField">
-                    20% WR
-                </div>
+                <!-- ko if: $data.squadFPP-->
+                <div class="statsField" data-bind="text: $data.squadFPP.KillDeath"></div>
+                <div class="statsField" data-bind="text: $data.squadFPP.AverageDamage"></div>
+                <div class="statsField" data-bind="text: $data.squadFPP.WinRatio"></div>
+                <!-- /ko -->
             </div>
         </div>
-        <div class="row statsRow">
+        <div class="row statsRow" data-bind="with: Player">
+            <!--SOLO TPP-->
             <div class="statsCard col-md-4">
-                <div class="statsField">
-                    1.2 KD
-                </div>
-                <div class="statsField">
-                    200ADR
-                </div>
-                <div class="statsField">
-                    20% WR
-                </div>
+                <!-- ko if: $data.soloTPP-->
+                <div class="statsField" data-bind="text: $data.soloTPP.KillDeath"></div>
+                <div class="statsField" data-bind="text: $data.soloTPP.AverageDamage"></div>
+                <div class="statsField" data-bind="text: $data.soloTPP.WinRatio"></div>
+                <!-- /ko -->
             </div>
+            <!--DUO TPP-->
             <div class="statsCard col-md-4">
-                <div class="statsField">
-                    1.2 KD
-                </div>
-                <div class="statsField">
-                    200ADR
-                </div>
-                <div class="statsField">
-                    20% WR
-                </div>
+                <!-- ko if: $data.duoTPP-->
+                <div class="statsField" data-bind="text: $data.soloFPP.KillDeath"></div>
+                <div class="statsField" data-bind="text: $data.soloFPP.AverageDamage"></div>
+                <div class="statsField" data-bind="text: $data.soloFPP.WinRatio"></div>
+                <!-- /ko -->
             </div>
+            <!--SQUAD TPP-->
             <div class="statsCard col-md-4">
-                <div class="statsField">
-                    1.2 KD
-                </div>
-                <div class="statsField">
-                    200ADR
-                </div>
-                <div class="statsField">
-                    20% WR
-                </div>
+                <!-- ko if: $data.squadTPP-->
+                <div class="statsField" data-bind="text: $data.squadTPP.KillDeath"></div>
+                <div class="statsField" data-bind="text: $data.squadTPP.AverageDamage"></div>
+                <div class="statsField" data-bind="text: $data.squadTPP.WinRatio"></div>
+                <!-- /ko -->
             </div>
         </div>
     </div>

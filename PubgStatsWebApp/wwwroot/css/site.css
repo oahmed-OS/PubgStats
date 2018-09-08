@@ -90,6 +90,15 @@ body {
     margin: 0 auto;
     max-width:20%;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100px;
+    font-weight: bold;
+    min-width: 100px;
 }
 
 .footer {
