@@ -101,7 +101,9 @@ body {
     text-align: center;
 
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+
     justify-content: center;
     align-items: center;
 
@@ -112,6 +114,16 @@ body {
     background-color: white;
     opacity: 0.2;
     font-size: 20px;
+}
+
+.statsField {
+    width: 50%;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.statsIcon {
+    width: 30px;
 }
 
 .footer {
