@@ -1,5 +1,4 @@
-﻿// Write your Javascript code.
-(function () {
+﻿(function () {
 
     function ModeModel(data) {
         var self = this;
@@ -57,14 +56,29 @@
     }
 
     function getPlayer(playerName, region) {
+
+        var playerStats = new StatsModel();
+
+        //Show Loader and Clear previous Data
+        showLoader();
+        ViewModel.Player(playerStats);
+
         var base = "http://pubgservicelayer.azurewebsites.net/api/pubg/playerstats/";
         $.getJSON(base + playerName + "/season/division.bro.official.2018-09/region/" + region, function (data) {
-            var playerStats = new StatsModel();
+            
             playerStats = ko.mapping.fromJS(data, modeMapping);
+            hideLoader();
             ViewModel.Player(playerStats);
         });
     };
 
+    function showLoader() {
+        $('#loader').css("display", "block");
+    };
+
+    function hideLoader() {
+        $('#loader').css("display", "none");
+    }
 
 
     $('#searchPlayer').submit(function (event) {
@@ -73,7 +87,6 @@
         event.preventDefault();
     });
 
-    //getPlayer("cronaldo97", "10");
     ko.applyBindings(ViewModel);
     
 } ());

@@ -20,47 +20,63 @@
     </div>
 </div>
 @*<pre data-bind="text: ko.toJSON($root, null, 2)"></pre>*@
+<div class="row loaderContainer" id="loader">
+    <div class="col-xs-12 loaderRow">
+        <img class="loader" src="~/images/icons/spinner.gif" />
+    </div>
+    <div class="col-xs-12">
+        <span>Reloading Player Stats</span>
+    </div>
+    
+</div>
+
 <!-- ko if: Player().soloFPP-->
 <div class="row statsGrid">
     <div class="statsGridContainer">
         <div class="row statsRow" data-bind="with: Player">
             <!--SOLO FPP-->
             <div class="statsCard col-md-4">
-                <div class="statsField" data-bind="text: $data.soloFPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsTitle">Solo FPP</div>
+                <div class="statsField" data-bind="text: $data.soloFPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/killdeath.svg" />
                 <div class="statsField" data-bind="text: $data.soloFPP.AverageDamage"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
-                <div class="statsField" data-bind="text: $data.soloFPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsField" data-bind="text: $data.soloFPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/winner.svg" />
             </div>
             <!--DUO FPP-->
             <div class="statsCard col-md-4">
-                <div class="statsField" data-bind="text: $data.duoFPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsTitle">Duo FPP</div>
+                <div class="statsField" data-bind="text: $data.duoFPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/killdeath.svg" />
                 <div class="statsField" data-bind="text: $data.duoFPP.AverageDamage"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
-                <div class="statsField" data-bind="text: $data.duoFPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsField" data-bind="text: $data.duoFPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/winner.svg" />
             </div>
             <!--SQUAD FPP-->
             <div class="statsCard col-md-4">
-                <div class="statsField" data-bind="text: $data.squadFPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsTitle">Squad FPP</div>
+                <div class="statsField" data-bind="text: $data.squadFPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/killdeath.svg" />
                 <div class="statsField" data-bind="text: $data.squadFPP.AverageDamage"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
-                <div class="statsField" data-bind="text: $data.squadFPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsField" data-bind="text: $data.squadFPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/winner.svg" />
             </div>
         </div>
         <div class="row statsRow" data-bind="with: Player">
             <!--SOLO TPP-->
             <div class="statsCard col-md-4">
-                <div class="statsField" data-bind="text: $data.soloTPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsTitle">Solo TPP</div>
+                <div class="statsField" data-bind="text: $data.soloTPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/killdeath.svg" />
                 <div class="statsField" data-bind="text: $data.soloTPP.AverageDamage"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
-                <div class="statsField" data-bind="text: $data.soloTPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsField" data-bind="text: $data.soloTPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/winner.svg" />
             </div>
             <!--DUO TPP-->
             <div class="statsCard col-md-4">
-                <div class="statsField" data-bind="text: $data.duoTPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsTitle">Duo TPP</div>
+                <div class="statsField" data-bind="text: $data.duoTPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/killdeath.svg" />
                 <div class="statsField" data-bind="text: $data.duoTPP.AverageDamage"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
-                <div class="statsField" data-bind="text: $data.duoTPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsField" data-bind="text: $data.duoTPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/winner.svg" />
             </div>
             <!--SQUAD TPP-->
             <div class="statsCard col-md-4">
-                <div class="statsField" data-bind="text: $data.squadTPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsTitle">Squad TPP</div>
+                <div class="statsField" data-bind="text: $data.squadTPP.KillDeath"></div><img class="statsIcon" src="~/images/icons/killdeath.svg" />
                 <div class="statsField" data-bind="text: $data.squadTPP.AverageDamage"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
-                <div class="statsField" data-bind="text: $data.squadTPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/damage.svg" />
+                <div class="statsField" data-bind="text: $data.squadTPP.WinRatio"></div><img class="statsIcon" src="~/images/icons/winner.svg" />
             </div>
         </div>
     </div>
