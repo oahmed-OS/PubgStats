@@ -8,6 +8,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Titillium Web', sans-serif;
     /*Background Image*/
     background-image: url('../images/background-lg.svg');
     background-repeat: no-repeat;
@@ -110,6 +111,10 @@ body {
     padding-bottom: 50px;
 }
 
+.statsTitle {
+    width: 100%;
+}
+
 .statsCard {
     background-color:gray;
     margin: 0 auto;
@@ -127,15 +132,17 @@ body {
     min-width: 100px;
     font-weight: bold;
 
-    background-color: white;
-    opacity: 0.2;
-    font-size: 20px;
+    background-color: gray;
+    box-shadow: 1px 3px 10px white;
+    border-radius: 10px;
+    font-size: 25px;
 }
 
 .statsField {
     width: 50%;
     flex-grow: 1;
     text-align: center;
+    padding-top: 10px;
 }
 
 .statsIcon {
